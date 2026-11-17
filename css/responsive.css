@@ -1,0 +1,156 @@
+/* ==========================================================================
+   NAFIDHAYN LAW FIRM — Responsive & Direction (RTL / LTR) Refinements
+   ========================================================================== */
+
+/* Direction & Internationalization Helpers */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* LTR Mirrors */
+html[dir="ltr"] .trust-item {
+  text-align: left;
+}
+
+html[dir="ltr"] .section-header.text-start {
+  text-align: left;
+}
+
+html[dir="ltr"] .faq-question-btn {
+  text-align: left;
+}
+
+/* Screen widths: 1200px+ */
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 3.8rem;
+  }
+}
+
+/* Tablet (max-width: 992px) */
+@media (max-width: 992px) {
+  .nav-menu,
+  .nav-cta-btn {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .hero-section {
+    padding-top: calc(var(--nav-height) + 20px);
+    padding-bottom: 60px;
+  }
+
+  .about-main-img {
+    height: 380px;
+  }
+}
+
+/* Mobile Devices (max-width: 767px) */
+@media (max-width: 767px) {
+  :root {
+    --nav-height: 74px;
+    --nav-height-scrolled: 64px;
+  }
+
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .section-header {
+    margin-bottom: 38px;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-trust-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .trust-item {
+    justify-content: flex-start;
+  }
+
+  .about-main-img {
+    height: 280px;
+  }
+
+  .modal-dialog {
+    margin: 12px;
+    max-height: 94vh;
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: 18px 20px;
+  }
+
+  .consultation-form-wrap {
+    padding: 20px 16px;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+  }
+}
+
+/* Extra Small Devices (320px - 400px) */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .brand-logo-img {
+    height: 34px;
+  }
+
+  .logo-badge {
+    padding: 4px 10px;
+  }
+}

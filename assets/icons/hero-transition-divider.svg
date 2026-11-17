@@ -1,0 +1,18 @@
+<svg width="400" height="28" viewBox="0 0 400 28" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="divLineL" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C7A44B" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#C7A44B" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="divLineR" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C7A44B" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#C7A44B" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <line x1="20" y1="14" x2="180" y2="14" stroke="url(#divLineL)" stroke-width="1" />
+  <!-- Center Najdi Diamond Lozenge -->
+  <polygon points="200,4 210,14 200,24 190,14" fill="#102D23" stroke="#C7A44B" stroke-width="1" />
+  <polygon points="200,8 206,14 200,20 194,14" fill="#C7A44B" fill-opacity="0.8" />
+  <circle cx="200" cy="14" r="1.5" fill="#FFFFFF" />
+  <line x1="220" y1="14" x2="380" y2="14" stroke="url(#divLineR)" stroke-width="1" />
+</svg>

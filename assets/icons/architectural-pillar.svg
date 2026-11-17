@@ -1,0 +1,59 @@
+<svg width="60" height="800" viewBox="0 0 60 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pillarFade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C7A44B" stop-opacity="0.55"/>
+      <stop offset="15%" stop-color="#C7A44B" stop-opacity="0.32"/>
+      <stop offset="50%" stop-color="#C7A44B" stop-opacity="0.22"/>
+      <stop offset="85%" stop-color="#C7A44B" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#C7A44B" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Top Capital: Stepped Najdi Crenellations (Shurafat) -->
+  <polygon points="6,40 12,26 18,40" fill="#C7A44B" fill-opacity="0.45" />
+  <polygon points="20,40 26,26 32,40" fill="#C7A44B" fill-opacity="0.55" />
+  <polygon points="34,40 40,26 46,40" fill="#C7A44B" fill-opacity="0.45" />
+  
+  <!-- Stepped Capital Cornice -->
+  <line x1="4" y1="42" x2="48" y2="42" stroke="#C7A44B" stroke-width="1.5" stroke-opacity="0.6" />
+  <line x1="8" y1="48" x2="44" y2="48" stroke="#C7A44B" stroke-width="1" stroke-opacity="0.4" />
+  <line x1="12" y1="54" x2="40" y2="54" stroke="#C7A44B" stroke-width="0.75" stroke-opacity="0.3" />
+
+  <!-- Vertical Fluting Lines (The Shaft) -->
+  <line x1="16" y1="54" x2="16" y2="746" stroke="url(#pillarFade)" stroke-width="0.8" />
+  <line x1="22" y1="54" x2="22" y2="746" stroke="url(#pillarFade)" stroke-width="1.2" />
+  <line x1="30" y1="54" x2="30" y2="746" stroke="url(#pillarFade)" stroke-width="1.2" />
+  <line x1="36" y1="54" x2="36" y2="746" stroke="url(#pillarFade)" stroke-width="0.8" />
+
+  <!-- Decorative Diamond Intersections along the shaft -->
+  <!-- Node 1 (y: 220) -->
+  <g transform="translate(26, 220)">
+    <polygon points="0,-12 12,0 0,12 -12,0" fill="#102D23" stroke="#C7A44B" stroke-width="0.75" stroke-opacity="0.5" />
+    <polygon points="0,-6 6,0 0,6 -6,0" fill="#C7A44B" fill-opacity="0.45" />
+    <line x1="-20" y1="0" x2="20" y2="0" stroke="#C7A44B" stroke-width="0.5" stroke-opacity="0.35" />
+  </g>
+
+  <!-- Node 2 (y: 400 - Center point) -->
+  <g transform="translate(26, 400)">
+    <polygon points="0,-16 16,0 0,16 -16,0" fill="#102D23" stroke="#C7A44B" stroke-width="0.8" stroke-opacity="0.6" />
+    <polygon points="0,-8 8,0 0,8 -8,0" fill="#C7A44B" fill-opacity="0.6" />
+    <circle cx="0" cy="0" r="2" fill="#FFFFFF" fill-opacity="0.7" />
+    <line x1="-24" y1="0" x2="24" y2="0" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.4" />
+  </g>
+
+  <!-- Node 3 (y: 580) -->
+  <g transform="translate(26, 580)">
+    <polygon points="0,-12 12,0 0,12 -12,0" fill="#102D23" stroke="#C7A44B" stroke-width="0.75" stroke-opacity="0.5" />
+    <polygon points="0,-6 6,0 0,6 -6,0" fill="#C7A44B" fill-opacity="0.45" />
+    <line x1="-20" y1="0" x2="20" y2="0" stroke="#C7A44B" stroke-width="0.5" stroke-opacity="0.35" />
+  </g>
+
+  <!-- Bottom Plinth / Base (Stepped Pedestal) -->
+  <line x1="12" y1="746" x2="40" y2="746" stroke="#C7A44B" stroke-width="0.75" stroke-opacity="0.3" />
+  <line x1="8" y1="752" x2="44" y2="752" stroke="#C7A44B" stroke-width="1" stroke-opacity="0.4" />
+  <line x1="4" y1="758" x2="48" y2="758" stroke="#C7A44B" stroke-width="1.5" stroke-opacity="0.6" />
+
+  <polygon points="6,760 12,774 18,760" fill="#C7A44B" fill-opacity="0.45" />
+  <polygon points="20,760 26,774 32,760" fill="#C7A44B" fill-opacity="0.55" />
+  <polygon points="34,760 40,774 46,760" fill="#C7A44B" fill-opacity="0.45" />
+</svg>

@@ -1,0 +1,40 @@
+<svg width="280" height="24" viewBox="0 0 280 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldLineL" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C7A44B" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#C7A44B" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="goldLineR" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C7A44B" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#C7A44B" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="goldDiamond" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5EED9"/>
+      <stop offset="40%" stop-color="#DFC168"/>
+      <stop offset="100%" stop-color="#C7A44B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left horizontal line -->
+  <line x1="10" y1="12" x2="105" y2="12" stroke="url(#goldLineL)" stroke-width="1" />
+  
+  <!-- Outer left small diamond -->
+  <polygon points="112,12 116,8 120,12 116,16" fill="url(#goldDiamond)" opacity="0.7" />
+
+  <!-- Center-left medium diamond -->
+  <polygon points="124,12 130,6 136,12 130,18" fill="url(#goldDiamond)" opacity="0.85" />
+
+  <!-- Central Major Faceted Diamond -->
+  <polygon points="135,12 140,4 145,12 140,20" fill="url(#goldDiamond)" />
+  <polygon points="138,12 140,8 142,12 140,16" fill="#102D23" opacity="0.75" />
+  <circle cx="140" cy="12" r="1.5" fill="#FFFFFF" />
+
+  <!-- Center-right medium diamond -->
+  <polygon points="144,12 150,6 156,12 150,18" fill="url(#goldDiamond)" opacity="0.85" />
+
+  <!-- Outer right small diamond -->
+  <polygon points="160,12 164,8 168,12 164,16" fill="url(#goldDiamond)" opacity="0.7" />
+
+  <!-- Right horizontal line -->
+  <line x1="175" y1="12" x2="270" y2="12" stroke="url(#goldLineR)" stroke-width="1" />
+</svg>
