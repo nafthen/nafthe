@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Nafidhayn Law Firm Official Website, CMS & Client Portal",
   "scripts": {
-    "start": "node server.js"
+    "start": "node api/server.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",

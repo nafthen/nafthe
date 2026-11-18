@@ -32,9 +32,11 @@ try {
   console.error('Supabase init error:', e.message);
 }
 
+const rootDir = path.join(__dirname, '..');
+
 // Multer storage for media uploads (safe for Vercel read-only serverless environment)
 const isServerless = Boolean(process.env.VERCEL);
-const uploadDir = isServerless ? path.join('/tmp', 'uploads') : path.join(__dirname, 'uploads');
+const uploadDir = isServerless ? path.join('/tmp', 'uploads') : path.join(rootDir, 'uploads');
 try {
   if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true });
@@ -63,10 +65,23 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(cookieParser());
 
-// Static file serving
-app.use(express.static(__dirname));
+// URL Normalization for Vercel Serverless Function rewrites
+if (isServerless) {
+  app.use((req, res, next) => {
+    const matched = req.headers['x-matched-path'] || req.headers['x-forwarded-uri'];
+    if (matched && matched.startsWith('/api')) {
+      req.url = matched;
+    } else if (!req.url.startsWith('/api')) {
+      req.url = '/api' + (req.url.startsWith('/') ? req.url : '/' + req.url);
+    }
+    next();
+  });
+}
+
+// Static file serving (active for local development)
+app.use(express.static(rootDir));
 app.use('/uploads', express.static(uploadDir));
-app.use('/admin', express.static(path.join(__dirname, 'admin')));
+app.use('/admin', express.static(path.join(rootDir, 'admin')));
 
 // -------------------------------------------------------------
 // JWT Token Helper (HMAC SHA-256 Stateless Tokens)
@@ -1244,7 +1259,7 @@ app.delete('/api/admin/media/:id', requireAdmin(['owner', 'admin']), async (req,
 
     // Remove local file if exists
     if (media.file_path && media.file_path.startsWith('/uploads/')) {
-      const localFilePath = path.join(__dirname, media.file_path);
+      const localFilePath = path.join(rootDir, media.file_path);
       if (fs.existsSync(localFilePath)) {
         fs.unlinkSync(localFilePath);
       }
@@ -1470,15 +1485,15 @@ app.get('/api/admin/activity', requireAdmin(['owner', 'admin']), async (req, res
   }
 });
 
-// Route /admin to /admin/index.html
+// Route /admin to /admin/index.html (for local development)
 app.get(/^\/admin(\/.*)?$/, (req, res) => {
-  res.sendFile(path.join(__dirname, 'admin', 'index.html'));
+  res.sendFile(path.join(rootDir, 'admin', 'index.html'));
 });
 
-// Catch-all for HTML pages or fallback
+// Catch-all for HTML pages or fallback (for local development)
 app.use((req, res, next) => {
   if (req.method === 'GET' && !req.path.startsWith('/api')) {
-    const directFile = path.join(__dirname, req.path + '.html');
+    const directFile = path.join(rootDir, req.path + '.html');
     if (fs.existsSync(directFile)) {
       return res.sendFile(directFile);
     }
