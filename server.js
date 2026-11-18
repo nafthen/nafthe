@@ -19,18 +19,28 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Supabase Configuration
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_ANON_KEY;
+const SUPABASE_URL = process.env.SUPABASE_URL || 'https://bqgqtirfyquxwfbbtwbi.supabase.co';
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_ANON_KEY || 'sb_publishable_Cd-b1wYzCNIEfoZvwmMUHw_Rrke6lBK';
 const JWT_SECRET = process.env.ADMIN_JWT_SECRET || 'nafidhayn_luxury_legal_jwt_secret_2026_super_secure_key';
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
-  auth: { persistSession: false }
-});
+let supabase;
+try {
+  supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
+    auth: { persistSession: false }
+  });
+} catch (e) {
+  console.error('Supabase init error:', e.message);
+}
 
-// Multer storage for media uploads
-const uploadDir = path.join(__dirname, 'uploads');
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
+// Multer storage for media uploads (safe for Vercel read-only serverless environment)
+const isServerless = Boolean(process.env.VERCEL);
+const uploadDir = isServerless ? path.join('/tmp', 'uploads') : path.join(__dirname, 'uploads');
+try {
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+  }
+} catch (e) {
+  // Read-only filesystem warning handled gracefully
 }
 
 const storage = multer.diskStorage({
@@ -1447,8 +1457,8 @@ app.use((req, res, next) => {
 
 module.exports = app;
 
-// Start Express Server locally
-if (!process.env.VERCEL) {
+// Start Express Server locally when run directly
+if (require.main === module) {
   app.listen(PORT, '127.0.0.1', () => {
     console.log(`[NAFIDHAYN LAW FIRM SERVER] Running at http://127.0.0.1:${PORT}/`);
     console.log(`[CMS & ADMIN DASHBOARD] Ready at http://127.0.0.1:${PORT}/admin`);
