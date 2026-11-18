@@ -208,7 +208,7 @@ app.use((req, res, next) => {
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'healthy',
-    project: 'Nafidhayn Law Firm CMS',
+    project: 'Nafidhayn Law Firm CMS v2',
     timestamp: new Date().toISOString()
   });
 });
