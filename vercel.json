@@ -1,8 +1,10 @@
 {
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api" },
-    { "source": "/admin", "destination": "/admin/index.html" },
-    { "source": "/admin/((?!css/|js/|assets/).*)", "destination": "/admin/index.html" }
-  ]
+  "functions": {
+    "server.js": {
+      "includeFiles": "{public/**,css/**,js/**,assets/**,admin/**,*.html}"
+    },
+    "index.js": {
+      "includeFiles": "{public/**,css/**,js/**,assets/**,admin/**,*.html}"
+    }
+  }
 }

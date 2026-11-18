@@ -32,7 +32,8 @@ try {
   console.error('Supabase init error:', e.message);
 }
 
-const rootDir = path.join(__dirname, '..');
+const rootDir = __dirname;
+const publicDir = path.join(rootDir, 'public');
 
 // Multer storage for media uploads (safe for Vercel read-only serverless environment)
 const isServerless = Boolean(process.env.VERCEL);
@@ -65,26 +66,29 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(cookieParser());
 
-// URL Normalization for Vercel Serverless Function rewrites
-if (isServerless) {
-  app.use((req, res, next) => {
-    const matched = req.headers['x-matched-path'] || req.headers['x-forwarded-uri'];
-    if (matched && matched.startsWith('/api')) {
-      req.url = matched;
-    } else if (!req.url.startsWith('/api')) {
-      req.url = '/api' + (req.url.startsWith('/') ? req.url : '/' + req.url);
-    }
-    next();
-  });
-}
+// Static file serving - explicit mounts for CSS, JS, Assets, and Admin
+app.use('/css', express.static(path.join(publicDir, 'css')));
+app.use('/css', express.static(path.join(rootDir, 'css')));
 
-// Static file serving (active for local development)
-const publicDir = path.join(rootDir, 'public');
-app.use(express.static(publicDir));
-app.use(express.static(rootDir));
-app.use('/uploads', express.static(uploadDir));
+app.use('/js', express.static(path.join(publicDir, 'js')));
+app.use('/js', express.static(path.join(rootDir, 'js')));
+
+app.use('/assets', express.static(path.join(publicDir, 'assets')));
+app.use('/assets', express.static(path.join(rootDir, 'assets')));
+
+app.use('/admin/css', express.static(path.join(publicDir, 'admin', 'css')));
+app.use('/admin/css', express.static(path.join(rootDir, 'admin', 'css')));
+
+app.use('/admin/js', express.static(path.join(publicDir, 'admin', 'js')));
+app.use('/admin/js', express.static(path.join(rootDir, 'admin', 'js')));
+
 app.use('/admin', express.static(path.join(publicDir, 'admin')));
 app.use('/admin', express.static(path.join(rootDir, 'admin')));
+
+app.use('/uploads', express.static(uploadDir));
+
+app.use(express.static(publicDir));
+app.use(express.static(rootDir));
 
 // -------------------------------------------------------------
 // JWT Token Helper (HMAC SHA-256 Stateless Tokens)
@@ -1488,17 +1492,39 @@ app.get('/api/admin/activity', requireAdmin(['owner', 'admin']), async (req, res
   }
 });
 
-// Route /admin to /admin/index.html (for local development)
-app.get(/^\/admin(\/.*)?$/, (req, res) => {
+// Route /admin and SPA subroutes to admin/index.html
+app.get(/^\/admin(\/.*)?$/, (req, res, next) => {
+  if (req.path.match(/\.(css|js|png|jpg|jpeg|svg|ico|json|woff2?|ttf)$/i)) {
+    return next();
+  }
+  const adminIndex = path.join(publicDir, 'admin', 'index.html');
+  if (fs.existsSync(adminIndex)) return res.sendFile(adminIndex);
   res.sendFile(path.join(rootDir, 'admin', 'index.html'));
 });
 
-// Catch-all for HTML pages or fallback (for local development)
+// Root / route
+app.get('/', (req, res) => {
+  const rootIndex = path.join(publicDir, 'index.html');
+  if (fs.existsSync(rootIndex)) return res.sendFile(rootIndex);
+  res.sendFile(path.join(rootDir, 'index.html'));
+});
+
+// Clean URLs & Fallback for HTML pages (/about, /services, /contact, /team, /consultation)
 app.use((req, res, next) => {
-  if (req.method === 'GET' && !req.path.startsWith('/api')) {
-    const directFile = path.join(rootDir, req.path + '.html');
-    if (fs.existsSync(directFile)) {
-      return res.sendFile(directFile);
+  if ((req.method === 'GET' || req.method === 'HEAD') && !req.path.startsWith('/api')) {
+    const cleanPath = req.path.replace(/^\//, '').replace(/\/$/, '');
+    if (cleanPath) {
+      const candidates = [
+        path.join(publicDir, cleanPath + '.html'),
+        path.join(rootDir, cleanPath + '.html'),
+        path.join(publicDir, cleanPath, 'index.html'),
+        path.join(rootDir, cleanPath, 'index.html')
+      ];
+      for (const cand of candidates) {
+        if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
+          return res.sendFile(cand);
+        }
+      }
     }
   }
   next();
