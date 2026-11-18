@@ -1,0 +1,11 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="14" fill="#102D23"/>
+  <g transform="translate(14, 14) scale(0.56)">
+    <!-- Main Right Arm: Deep Green -->
+    <path d="M38 12L56 30C58 32 58 36 56 38L32 62C30 64 26 64 24 62L8 46C6 44 6 40 8 38L18 28L38 12Z" fill="#006654"/>
+    <!-- Left Top Diamond: Vibrant Emerald -->
+    <rect x="14" y="8" width="34" height="34" rx="8" transform="rotate(45 14 8)" fill="#009F54"/>
+    <!-- Center Gold Pill -->
+    <rect x="22" y="16" width="14" height="28" rx="7" transform="rotate(45 22 16)" fill="#FCBA00"/>
+  </g>
+</svg>

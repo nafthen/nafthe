@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم الإدارية | شركة نافذين للمحاماة والاستشارات القانونية</title>
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons for Dashboard -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Admin Styles -->
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- ========================================================================= -->
+  <!-- 1. LOGIN OVERLAY / VIEW                                                   -->
+  <!-- ========================================================================= -->
+  <div id="loginView" class="login-container">
+    <div class="login-bg-pattern"></div>
+    <div class="login-card">
+      <div class="login-header">
+        <img src="/assets/logo.png" alt="شعار شركة نافذين للمحاماة" class="login-logo">
+        <h1 class="login-title">بوابة الإدارة المركزية</h1>
+        <p class="login-subtitle">شركة نافذين للمحاماة والاستشارات القانونية</p>
+        <div class="login-badge">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>نظام مشفر ومحمي - ترخيص رقم 44435</span>
+        </div>
+      </div>
+
+      <form id="loginForm" class="login-form">
+        <div id="loginAlert" class="admin-alert hidden"></div>
+
+        <div class="form-group">
+          <label for="loginEmail" class="form-label">البريد الإلكتروني المهني</label>
+          <div class="input-with-icon">
+            <i class="fa-regular fa-envelope input-icon"></i>
+            <input type="email" id="loginEmail" class="form-control" placeholder="name@nafidhayn.sa" required autocomplete="username">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword" class="form-label">كلمة المرور</label>
+          <div class="input-with-icon">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••••••" required autocomplete="current-password">
+          </div>
+        </div>
+
+        <div class="login-quick-creds" onclick="fillAdminCredentials()">
+          <i class="fa-solid fa-key"></i>
+          <span>استخدام بيانات الإدارة الافتراضية للتجربة (admin@nafidhayn.sa)</span>
+        </div>
+
+        <button type="submit" id="loginSubmitBtn" class="btn btn-gold btn-block">
+          <span>تسجيل الدخول للنظام</span>
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+      </form>
+
+      <div class="login-footer">
+        <p>© 2026 شركة نافذين للمحاماة والاستشارات القانونية. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. MAIN ADMIN DASHBOARD SHELL                                             -->
+  <!-- ========================================================================= -->
+  <div id="dashboardApp" class="dashboard-shell hidden">
+    
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-brand">
+        <img src="/assets/logo.png" alt="نافذين للمحاماة" class="sidebar-logo">
+        <div class="sidebar-brand-text">
+          <span class="brand-title">نافذين للمحاماة</span>
+          <span class="brand-license">ترخيص رقم 44435</span>
+        </div>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="إغلاق القائمة">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-user-preview">
+        <div class="user-avatar" id="sidebarUserInitials">ن</div>
+        <div class="user-info">
+          <span class="user-name" id="sidebarUserName">إدارة نافذين</span>
+          <span class="user-role-badge" id="sidebarUserRole">المالك</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">الرئيسية والطلبات</div>
+        <a href="#overview" class="nav-item active" data-module="overview">
+          <i class="fa-solid fa-chart-pie nav-icon"></i>
+          <span class="nav-label">لوحة المؤشرات</span>
+        </a>
+        <a href="#inquiries" class="nav-item" data-module="inquiries">
+          <i class="fa-solid fa-envelope-open-text nav-icon"></i>
+          <span class="nav-label">الاستفسارات</span>
+          <span class="nav-badge" id="inquiriesBadge" style="display:none;">0</span>
+        </a>
+        <a href="#consultations" class="nav-item" data-module="consultations">
+          <i class="fa-solid fa-calendar-check nav-icon"></i>
+          <span class="nav-label">طلبات الاستشارة</span>
+          <span class="nav-badge" id="consultationsBadge" style="display:none;">0</span>
+        </a>
+
+        <div class="nav-section-title">إدارة المحتوى (CMS)</div>
+        <a href="#content" class="nav-item" data-module="content">
+          <i class="fa-solid fa-pen-nib nav-icon"></i>
+          <span class="nav-label">أقسام الموقع والهيرو</span>
+        </a>
+        <a href="#services" class="nav-item" data-module="services">
+          <i class="fa-solid fa-scale-balanced nav-icon"></i>
+          <span class="nav-label">الخدمات القانونية</span>
+        </a>
+        <a href="#faq" class="nav-item" data-module="faq">
+          <i class="fa-solid fa-circle-question nav-icon"></i>
+          <span class="nav-label">الأسئلة الشائعة</span>
+        </a>
+        <a href="#articles" class="nav-item" data-module="articles">
+          <i class="fa-solid fa-newspaper nav-icon"></i>
+          <span class="nav-label">المقالات والأنظمة</span>
+        </a>
+        <a href="#media" class="nav-item" data-module="media">
+          <i class="fa-solid fa-images nav-icon"></i>
+          <span class="nav-label">مكتبة الوسائط</span>
+        </a>
+
+        <div class="nav-section-title">إعدادات النظام</div>
+        <a href="#settings" class="nav-item" data-module="settings">
+          <i class="fa-solid fa-sliders nav-icon"></i>
+          <span class="nav-label">معلومات الشركة والاتصال</span>
+        </a>
+        <a href="#users" class="nav-item" data-module="users">
+          <i class="fa-solid fa-users-gear nav-icon"></i>
+          <span class="nav-label">فريق العمل والصلاحيات</span>
+        </a>
+        <a href="#activity" class="nav-item" data-module="activity">
+          <i class="fa-solid fa-clock-rotate-left nav-icon"></i>
+          <span class="nav-label">سجل التدقيق والعمليات</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/" target="_blank" class="sidebar-link-btn">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>زيارة الموقع العام</span>
+        </a>
+        <button onclick="handleLogout()" class="sidebar-logout-btn">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>تسجيل الخروج</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="admin-main-wrap">
+      
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <button class="topbar-toggle-btn" id="mobileMenuToggle" aria-label="فتح القائمة">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-breadcrumb">
+            <span class="breadcrumb-root">لوحة الإدارة</span>
+            <i class="fa-solid fa-chevron-left breadcrumb-sep"></i>
+            <span class="breadcrumb-current" id="currentSectionTitle">لوحة المؤشرات</span>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <!-- Notification Bell -->
+          <div class="topbar-dropdown-wrap">
+            <button class="topbar-icon-btn" id="notificationsBtn" aria-label="الإشعارات">
+              <i class="fa-regular fa-bell"></i>
+              <span class="notif-indicator" id="notifCount" style="display:none;">0</span>
+            </button>
+            <div class="dropdown-panel notif-panel" id="notificationsPanel">
+              <div class="notif-panel-header">
+                <h3>الإشعارات الحديثة</h3>
+                <button onclick="markAllNotificationsRead()" class="btn-text">تحديد الكل كمقروء</button>
+              </div>
+              <div class="notif-list" id="notificationsList">
+                <div class="notif-empty">لا توجد إشعارات جديدة</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Visit Site -->
+          <a href="/" target="_blank" class="btn btn-outline-gold btn-sm">
+            <i class="fa-solid fa-globe"></i>
+            <span class="btn-text-desktop">الموقع المباشر</span>
+          </a>
+
+          <!-- User Menu -->
+          <div class="user-menu-pill" id="userMenuPill">
+            <div class="user-menu-avatar" id="topbarUserAvatar">ن</div>
+            <div class="user-menu-details">
+              <span class="user-menu-name" id="topbarUserName">إدارة نافذين</span>
+              <span class="user-menu-role" id="topbarUserRole">المالك</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- VIEW CONTAINER -->
+      <main class="admin-content-area" id="adminContent">
+        <!-- Dynamic module content injected here -->
+      </main>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 3. GLOBAL MODAL CONTAINER                                                 -->
+  <!-- ========================================================================= -->
+  <div id="adminModal" class="admin-modal-backdrop hidden">
+    <div class="admin-modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">عنوان النافذة</h3>
+        <button class="modal-close-btn" onclick="closeModal()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Modal content dynamically injected -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- JavaScript -->
+  <script src="/admin/js/admin.js"></script>
+</body>
+</html>

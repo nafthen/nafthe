@@ -1,0 +1,142 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Facet Gradients for 3D Carved Stone / Architectural Mosaic Effect -->
+    <linearGradient id="facetHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F5744"/>
+      <stop offset="100%" stop-color="#143B2E"/>
+    </linearGradient>
+    <linearGradient id="facetMid" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#194637"/>
+      <stop offset="100%" stop-color="#0E2B21"/>
+    </linearGradient>
+    <linearGradient id="facetDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#113327"/>
+      <stop offset="100%" stop-color="#071812"/>
+    </linearGradient>
+    <linearGradient id="facetDeepest" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06140E"/>
+      <stop offset="100%" stop-color="#0C251C"/>
+    </linearGradient>
+    <linearGradient id="goldStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DFC168" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#C7A44B" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="centerJewel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DFC168"/>
+      <stop offset="50%" stop-color="#C7A44B"/>
+      <stop offset="100%" stop-color="#8C6E25"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base Tile -->
+  <rect width="160" height="160" fill="#0A1E17"/>
+
+  <!-- ========================================================================
+       CENTER 8-WAY GEOMETRIC STAR ROSETTE (Nafidhayn Rhombus Architecture)
+       Center at (80, 80)
+       ======================================================================== -->
+  
+  <!-- 1. Major Compass Rhombuses (North, South, East, West) -->
+  <!-- North Rhombus -->
+  <polygon points="80,80 56,48 80,16 104,48" fill="url(#facetHighlight)" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.25"/>
+  <!-- South Rhombus -->
+  <polygon points="80,80 56,112 80,144 104,112" fill="url(#facetHighlight)" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.25"/>
+  <!-- East Rhombus -->
+  <polygon points="80,80 112,56 144,80 112,104" fill="url(#facetMid)" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.25"/>
+  <!-- West Rhombus -->
+  <polygon points="80,80 48,56 16,80 48,104" fill="url(#facetMid)" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.25"/>
+
+  <!-- 2. Diagonal Interlocking Rhombuses (Nafidhayn Logo 45-degree angle) -->
+  <!-- North-East Rhombus -->
+  <polygon points="80,80 104,48 136,56 112,88" fill="url(#facetDark)" stroke="#1FA085" stroke-width="0.6" stroke-opacity="0.3"/>
+  <!-- North-West Rhombus -->
+  <polygon points="80,80 56,48 24,56 48,88" fill="url(#facetDeepest)" stroke="#1FA085" stroke-width="0.6" stroke-opacity="0.3"/>
+  <!-- South-West Rhombus -->
+  <polygon points="80,80 48,88 24,104 56,112" fill="url(#facetDark)" stroke="#1FA085" stroke-width="0.6" stroke-opacity="0.3"/>
+  <!-- South-East Rhombus -->
+  <polygon points="80,80 112,88 136,104 104,112" fill="url(#facetDeepest)" stroke="#1FA085" stroke-width="0.6" stroke-opacity="0.3"/>
+
+  <!-- 3. Interstitial Geometric Facet Triangles -->
+  <polygon points="80,80 56,48 80,48" fill="#1B4E3E" opacity="0.4"/>
+  <polygon points="80,80 104,48 80,48" fill="#133C2F" opacity="0.4"/>
+  <polygon points="80,80 56,112 80,112" fill="#1B4E3E" opacity="0.4"/>
+  <polygon points="80,80 104,112 80,112" fill="#133C2F" opacity="0.4"/>
+
+  <!-- ========================================================================
+       FOUR CORNERS (0,0), (160,0), (0,160), (160,160) - PERFECT TESSELLATION
+       ======================================================================== -->
+
+  <!-- Top-Left Corner (0,0) -->
+  <polygon points="0,0 24,32 0,64 -24,32" fill="url(#facetHighlight)" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.25"/>
+  <polygon points="0,0 32,24 64,0 32,-24" fill="url(#facetMid)" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.25"/>
+  <polygon points="0,0 24,32 56,24 32,-8" fill="url(#facetDark)" stroke="#1FA085" stroke-width="0.6" stroke-opacity="0.3"/>
+  <polygon points="0,0 32,24 24,56 -8,32" fill="url(#facetDeepest)" stroke="#1FA085" stroke-width="0.6" stroke-opacity="0.3"/>
+
+  <!-- Top-Right Corner (160,0) -->
+  <polygon points="160,0 136,32 160,64 184,32" fill="url(#facetHighlight)" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.25"/>
+  <polygon points="160,0 128,24 96,0 128,-24" fill="url(#facetMid)" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.25"/>
+  <polygon points="160,0 136,32 104,24 128,-8" fill="url(#facetDeepest)" stroke="#1FA085" stroke-width="0.6" stroke-opacity="0.3"/>
+  <polygon points="160,0 128,24 136,56 168,32" fill="url(#facetDark)" stroke="#1FA085" stroke-width="0.6" stroke-opacity="0.3"/>
+
+  <!-- Bottom-Left Corner (0,160) -->
+  <polygon points="0,160 24,128 0,96 -24,128" fill="url(#facetHighlight)" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.25"/>
+  <polygon points="0,160 32,136 64,160 32,184" fill="url(#facetMid)" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.25"/>
+  <polygon points="0,160 24,128 56,136 32,168" fill="url(#facetDeepest)" stroke="#1FA085" stroke-width="0.6" stroke-opacity="0.3"/>
+  <polygon points="0,160 32,136 24,104 -8,128" fill="url(#facetDark)" stroke="#1FA085" stroke-width="0.6" stroke-opacity="0.3"/>
+
+  <!-- Bottom-Right Corner (160,160) -->
+  <polygon points="160,160 136,128 160,96 184,128" fill="url(#facetHighlight)" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.25"/>
+  <polygon points="160,160 128,136 96,160 128,184" fill="url(#facetMid)" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.25"/>
+  <polygon points="160,160 136,128 104,136 128,168" fill="url(#facetDark)" stroke="#1FA085" stroke-width="0.6" stroke-opacity="0.3"/>
+  <polygon points="160,160 128,136 136,104 168,128" fill="url(#facetDeepest)" stroke="#1FA085" stroke-width="0.6" stroke-opacity="0.3"/>
+
+  <!-- ========================================================================
+       INTER-TILE CONNECTING DIAMONDS (Mid-edges)
+       ======================================================================== -->
+  <!-- Top Edge Diamond (80, 0) -->
+  <polygon points="80,0 96,16 80,32 64,16" fill="#143E31" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.35"/>
+  <polygon points="80,4 92,16 80,28 68,16" fill="#1C5342"/>
+  <polygon points="80,8 88,16 80,24 72,16" fill="#DFC168" fill-opacity="0.6"/>
+
+  <!-- Bottom Edge Diamond (80, 160) -->
+  <polygon points="80,160 96,144 80,128 64,144" fill="#143E31" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.35"/>
+  <polygon points="80,156 92,144 80,132 68,144" fill="#1C5342"/>
+  <polygon points="80,152 88,144 80,136 72,144" fill="#DFC168" fill-opacity="0.6"/>
+
+  <!-- Left Edge Diamond (0, 80) -->
+  <polygon points="0,80 16,96 32,80 16,64" fill="#143E31" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.35"/>
+  <polygon points="4,80 16,92 28,80 16,68" fill="#1C5342"/>
+  <polygon points="8,80 16,88 24,80 16,72" fill="#DFC168" fill-opacity="0.6"/>
+
+  <!-- Right Edge Diamond (160, 80) -->
+  <polygon points="160,80 144,96 128,80 144,64" fill="#143E31" stroke="#C7A44B" stroke-width="0.6" stroke-opacity="0.35"/>
+  <polygon points="156,80 144,92 132,80 144,68" fill="#1C5342"/>
+  <polygon points="152,80 144,88 136,80 144,72" fill="#DFC168" fill-opacity="0.6"/>
+
+  <!-- ========================================================================
+       CENTRAL CONCENTRIC DIAMOND EMBLEM (The Logo Heartbeat)
+       ======================================================================== -->
+  <polygon points="80,56 104,80 80,104 56,80" fill="#0D271F" stroke="#C7A44B" stroke-width="0.8" stroke-opacity="0.7"/>
+  <polygon points="80,62 98,80 80,98 62,80" fill="#176D5D" stroke="#DFC168" stroke-width="0.6" stroke-opacity="0.8"/>
+  <polygon points="80,68 92,80 80,92 68,80" fill="url(#centerJewel)" stroke="#FFFFFF" stroke-width="0.5" stroke-opacity="0.5"/>
+  <polygon points="80,74 86,80 80,86 74,80" fill="#FFFFFF" fill-opacity="0.85"/>
+
+  <!-- Corner Matching Diamond Jewels (Quarter-visible at corners) -->
+  <polygon points="0,16 16,0 0,-16 -16,0" fill="#0D271F" stroke="#C7A44B" stroke-width="0.8" stroke-opacity="0.6"/>
+  <polygon points="0,10 10,0 0,-10 -10,0" fill="url(#centerJewel)"/>
+
+  <polygon points="160,16 176,0 160,-16 144,0" fill="#0D271F" stroke="#C7A44B" stroke-width="0.8" stroke-opacity="0.6"/>
+  <polygon points="160,10 170,0 160,-10 150,0" fill="url(#centerJewel)"/>
+
+  <polygon points="0,176 16,160 0,144 -16,160" fill="#0D271F" stroke="#C7A44B" stroke-width="0.8" stroke-opacity="0.6"/>
+  <polygon points="0,170 10,160 0,150 -10,160" fill="url(#centerJewel)"/>
+
+  <polygon points="160,176 176,160 160,144 144,160" fill="#0D271F" stroke="#C7A44B" stroke-width="0.8" stroke-opacity="0.6"/>
+  <polygon points="160,170 170,160 160,150 150,160" fill="url(#centerJewel)"/>
+
+  <!-- Subtle Geometric Grid Lines connecting centers -->
+  <line x1="0" y1="80" x2="160" y2="80" stroke="#C7A44B" stroke-width="0.4" stroke-opacity="0.2"/>
+  <line x1="80" y1="0" x2="80" y2="160" stroke="#C7A44B" stroke-width="0.4" stroke-opacity="0.2"/>
+  <line x1="0" y1="0" x2="160" y2="160" stroke="#1FA085" stroke-width="0.4" stroke-opacity="0.18"/>
+  <line x1="160" y1="0" x2="0" y2="160" stroke="#1FA085" stroke-width="0.4" stroke-opacity="0.18"/>
+</svg>

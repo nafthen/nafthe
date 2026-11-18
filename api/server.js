@@ -79,8 +79,11 @@ if (isServerless) {
 }
 
 // Static file serving (active for local development)
+const publicDir = path.join(rootDir, 'public');
+app.use(express.static(publicDir));
 app.use(express.static(rootDir));
 app.use('/uploads', express.static(uploadDir));
+app.use('/admin', express.static(path.join(publicDir, 'admin')));
 app.use('/admin', express.static(path.join(rootDir, 'admin')));
 
 // -------------------------------------------------------------

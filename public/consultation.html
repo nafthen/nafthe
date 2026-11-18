@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حجز استشارة قانونية | Book Consultation - Nafidhayn Law Firm</title>
+  <meta name="description" content="بوابة حجز الاستشارات القانونية لشركة نافذين للمحاماة والاستشارات القانونية - تنظيم مواعيد الاستشارات الحضورية والافتراضية.">
+  
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="siteHeader" class="site-header scrolled">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo-link" aria-label="شركة نافذين للمحاماة">
+        <div class="logo-badge">
+          <img src="assets/images/logo.png" alt="شركة نافذين للمحاماة" class="brand-logo-img">
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="القائمة الرئيسية">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">الرئيسية</a>
+        <a href="about.html" class="nav-link" data-i18n="nav_about">من نحن</a>
+        <a href="services.html" class="nav-link" data-i18n="nav_services">خدماتنا</a>
+        <a href="team.html" class="nav-link" data-i18n="nav_team">فريق العمل</a>
+        <a href="index.html#faq" class="nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav_contact">تواصل معنا</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="langSwitchBtn" class="lang-switch-btn" aria-label="تبديل اللغة">
+          <i class="fa-solid fa-globe"></i> <span>English</span>
+        </button>
+        <a href="consultation.html" class="btn btn-primary nav-cta-btn active" data-i18n="nav_cta">احجز استشارة</a>
+        <button id="mobileMenuToggle" class="mobile-toggle" aria-label="فتح القائمة">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobileDrawerOverlay" class="mobile-drawer-overlay"></div>
+  <aside id="mobileDrawer" class="mobile-drawer">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link" data-i18n="nav_home">الرئيسية</a>
+      <a href="about.html" class="mobile-nav-link" data-i18n="nav_about">من نحن</a>
+      <a href="services.html" class="mobile-nav-link" data-i18n="nav_services">خدماتنا</a>
+      <a href="team.html" class="mobile-nav-link" data-i18n="nav_team">فريق العمل</a>
+      <a href="index.html#faq" class="mobile-nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a>
+      <a href="contact.html" class="mobile-nav-link" data-i18n="nav_contact">تواصل معنا</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <button id="mobileLangSwitchBtn" class="lang-switch-btn" style="width:100%; justify-content:center;">
+        <i class="fa-solid fa-globe"></i> <span>English</span>
+      </button>
+      <a href="https://wa.me/966559787755?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%B4%D8%B1%D9%83%D8%A9%20%D9%86%D8%A7%D9%81%D8%B0%D9%8A%D9%86%20%D9%84%D9%84%D9%85%D8%AD%D8%A7%D9%85%D8%A7%D8%A9%20%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A%D8%A9." 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="btn btn-whatsapp" 
+         style="width:100%;">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>استشارة واتساب <bdi dir="ltr" class="phone-val">(055 978 7755)</bdi></span>
+      </a>
+      <a href="tel:+966559787755" class="btn btn-outline-white" style="width:100%; font-size:0.9rem;">
+        <i class="fa-solid fa-phone"></i>
+        <span>اتصال مباشر: <bdi dir="ltr" class="phone-val">055 978 7755</bdi></span>
+      </a>
+      <div style="font-size:0.8rem; color:var(--c-muted-on-dark); text-align:center; padding-top:6px;">
+        <i class="fa-solid fa-certificate text-gold"></i> <span data-i18n="footer_license">رقم الترخيص: 44435</span>
+      </div>
+    </div>
+  </aside>
+
+  <main style="padding-top: var(--nav-height-scrolled);">
+    
+    <!-- PAGE HERO -->
+    <section class="section section-dark" style="padding: 70px 0; background: linear-gradient(160deg, #0A1B14 0%, #102D23 60%, #0B1F17 100%);">
+      <div class="hero-pattern"></div>
+      <div class="container text-center reveal" style="position:relative; z-index:2;">
+        <span class="section-badge" style="background:rgba(199,164,75,0.18);">
+          <i class="fa-regular fa-calendar-check"></i>
+          <span>حجز استشارة</span>
+        </span>
+        <h1 class="section-title text-gold" style="margin-top:12px;" data-i18n="page_consult_hero_title">بوابة حجز الاستشارات القانونية</h1>
+        <p class="section-subtitle" style="color:var(--c-muted-on-dark);" data-i18n="page_consult_hero_sub">
+          خطوات ميسرة لتنظيم موعد استشارتك الحضورية أو الافتراضية مع المستشار المختص.
+        </p>
+      </div>
+    </section>
+
+    <!-- INTAKE PORTAL FORM -->
+    <section class="section section-ivory">
+      <div class="container container-narrow">
+        
+        <div class="consultation-form-wrap reveal">
+          <div style="border-bottom: 1px solid var(--b-soft); padding-bottom: 20px; margin-bottom: 24px;">
+            <h2 style="font-size:1.6rem; color:var(--c-forest); margin-bottom:6px;">استمارة تسجيل الاستشارة القانونية</h2>
+            <p style="font-size:0.95rem; color:var(--c-ink-muted); margin:0;">
+              يرجى تزويدنا بتفاصيل الموضوع لمساعدتنا في توجيه الملف للمستشار الأنسب وفحص تعارض المصالح مسبقاً.
+            </p>
+          </div>
+
+          <!-- Direct Instant WhatsApp Consultation Option -->
+          <a href="https://wa.me/966559787755?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%B4%D8%B1%D9%83%D8%A9%20%D9%86%D8%A7%D9%81%D8%B0%D9%8A%D9%86%20%D9%84%D9%84%D9%85%D8%AD%D8%A7%D9%85%D8%A7%D8%A9%20%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A%D8%A9." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn btn-whatsapp" 
+             style="width:100%; margin-bottom:22px; padding:13px 20px;">
+            <i class="fa-brands fa-whatsapp" style="font-size:1.3rem;"></i>
+            <span data-i18n="contact_consultation_cta">تواصل معنا لحجز استشارتك</span>
+            <span style="font-size:0.85rem; opacity:0.9;"><bdi dir="ltr" class="phone-val">(055 978 7755)</bdi></span>
+          </a>
+
+          <form id="portalConsultationForm" novalidate>
+            
+            <!-- Client Type Radios -->
+            <div class="form-group" style="margin-bottom: 22px;">
+              <label style="font-weight:600; margin-bottom:10px;">صفة مقدم الطلب *</label>
+              <div style="display:flex; gap:18px; flex-wrap:wrap;">
+                <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.92rem;">
+                  <input type="radio" name="clientType" value="corporate" checked accent-color="var(--c-teal)">
+                  <span>شركة أو منشأة تجارية</span>
+                </label>
+                <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.92rem;">
+                  <input type="radio" name="clientType" value="individual" accent-color="var(--c-teal)">
+                  <span>فرد / مستثمر فردي</span>
+                </label>
+                <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.92rem;">
+                  <input type="radio" name="clientType" value="international" accent-color="var(--c-teal)">
+                  <span>كيان أجنبي / مستثمر دولي</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Name & Company -->
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="pName">الاسم الكامل *</label>
+                <input type="text" id="pName" required placeholder="مثال: محمد بن فهد القحطاني">
+              </div>
+              <div class="form-group">
+                <label for="pEntity">اسم المنشأة / السجل التجاري (إن وجد)</label>
+                <input type="text" id="pEntity" placeholder="مثال: شركة التطوير العقاري المحدودة">
+              </div>
+            </div>
+
+            <!-- Phone & Email -->
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="pPhone">رقم الجوال السعودي *</label>
+                <input type="tel" id="pPhone" required placeholder="05xxxxxxxx">
+              </div>
+              <div class="form-group">
+                <label for="pEmail">البريد الإلكتروني الرسمي *</label>
+                <input type="email" id="pEmail" required placeholder="name@company.sa">
+              </div>
+            </div>
+
+            <!-- Service & Meeting Format -->
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="pService">مجال الممارسة القانونية *</label>
+                <select id="pService" required>
+                  <option value="" disabled selected>اختر التخصص المطلوب...</option>
+                  <option value="1">المحاماة والتقاضي وحل النزاعات</option>
+                  <option value="2">الشركات والاستثمار الأجنبي</option>
+                  <option value="3">العقود والاتفاقيات التجارية</option>
+                  <option value="4">العقارات والإنشاءات والتمويل</option>
+                  <option value="5">الملكية الفكرية والعلامات التجارية</option>
+                  <option value="6">الاستشارات العمالية والتنظيمية</option>
+                  <option value="7">أخرى / استشارة عامة</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="pFormat">طبيعة الاجتماع المفضلة *</label>
+                <select id="pFormat" required>
+                  <option value="office">حضوريًا في مقر الشركة بالرياض</option>
+                  <option value="virtual">اجتماع افتراضي عبر الاتصال المرئي</option>
+                  <option value="phone">مكالمة هاتفية تمهيدية</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Case Summary -->
+            <div class="form-group">
+              <label for="pDesc">موجز القضية أو الاستشارة القانونية *</label>
+              <textarea id="pDesc" rows="4" required placeholder="يرجى كتابة شرح موجز للموضوع والطلبات وأطراف النزاع إن وجدت..."></textarea>
+            </div>
+
+            <!-- Conflict Check & Terms -->
+            <div class="checkbox-group">
+              <input type="checkbox" id="pConflictChk" required>
+              <label for="pConflictChk">
+                أقر بصحة البيانات وأوافق على سياسة السرية والتحقق النظامي من تعارض المصالح المهني.
+              </label>
+            </div>
+
+            <!-- Legal Disclaimer Notice -->
+            <div class="legal-notice-box">
+              <i class="fa-solid fa-scale-balanced text-gold"></i>
+              <strong>إشعار مهني:</strong> إرسال هذا الطلب يعد إجراءً تمهيدياً لتحديد موعد ومراجعة المستندات ولا يترتب عليه أي توكيل قضائي رسمي إلا بعد توقيع عقد تقديم الخدمات القانونية والتحقق من عدم وجود مانع نظامي.
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>تأكيد إرسال طلب الاستشارة</span>
+            </button>
+
+            <div id="portalStatusAlert" class="form-status-alert"></div>
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-pattern"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo-badge">
+            <img src="assets/images/logo.png" alt="شركة نافذين للمحاماة" class="footer-logo-img">
+          </div>
+          <p class="footer-desc" data-i18n="footer_desc">
+            شركة نافذين للمحاماة والاستشارات القانونية، شركة مهنية سعودية تقدم خدمات المحاماة والتمثيل القضائي والاستشارات التجارية المتخصصة وفق أعلى معايير الحوكمة والأنظمة المرعية.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col_nav">روابط سريعة</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" data-i18n="nav_home">الرئيسية</a></li>
+            <li><a href="about.html" data-i18n="nav_about">من نحن</a></li>
+            <li><a href="services.html" data-i18n="nav_services">خدماتنا</a></li>
+            <li><a href="team.html" data-i18n="nav_team">فريق العمل</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">تواصل معنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col_services">الممارسات القانونية</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html#service-1" data-i18n="svc_1_title">التقاضي وحل النزاعات</a></li>
+            <li><a href="services.html#service-2" data-i18n="svc_2_title">الشركات والاستثمار</a></li>
+            <li><a href="services.html#service-3" data-i18n="svc_3_title">العقود التجارية</a></li>
+            <li><a href="services.html#service-4" data-i18n="svc_4_title">العقارات والإنشاءات</a></li>
+            <li><a href="services.html#service-5" data-i18n="svc_5_title">الملكية الفكرية</a></li>
+            <li><a href="services.html#service-6" data-i18n="svc_6_title">الاستشارات العمالية</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer_col_contact">الاتصال والاعتماد</h4>
+          <ul class="footer-contact-items">
+            <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="contact_address_val">الرياض، المملكة العربية السعودية</span></li>
+            <li><i class="fa-solid fa-phone"></i> <a href="tel:+966559787755" class="phone-number" dir="ltr" data-i18n="contact_phone_val"><bdi dir="ltr" class="phone-val">055 978 7755</bdi></a></li>
+            <li><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/966559787755?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%B4%D8%B1%D9%83%D8%A9%20%D9%86%D8%A7%D9%81%D8%B0%D9%8A%D9%86%20%D9%84%D9%84%D9%85%D8%AD%D8%A7%D9%85%D8%A7%D8%A9%20%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A%D8%A9." target="_blank" rel="noopener noreferrer">واتساب: <bdi dir="ltr" class="phone-val">055 978 7755</bdi></a></li>
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:Nafidhayn.sa@gmail.com" data-i18n="contact_email_val">Nafidhayn.sa@gmail.com</a></li>
+            <li style="margin-top:6px;">
+              <span class="license-footer-item">
+                <i class="fa-solid fa-certificate text-gold"></i>
+                <strong data-i18n="footer_license">رقم الترخيص: 44435</strong>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p data-i18n="footer_copy">جميع الحقوق محفوظة © شركة نافذين للمحاماة والاستشارات القانونية</p>
+        <div class="footer-bottom-links">
+          <a href="/admin" class="footer-admin-link" style="color:var(--c-gold); font-weight:600;"><i class="fa-solid fa-lock" style="font-size:0.75rem; margin-left:4px;"></i> بوابة الإدارة</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Consultation Button -->
+  <a href="https://wa.me/966559787755?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%B4%D8%B1%D9%83%D8%A9%20%D9%86%D8%A7%D9%81%D8%B0%D9%8A%D9%86%20%D9%84%D9%84%D9%85%D8%AD%D8%A7%D9%85%D8%A7%D8%A9%20%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A%D8%A9." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-whatsapp-btn" 
+     aria-label="استشارة واتساب مباشرة">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="wa-text" data-i18n="wa_floating_text">استشارة واتساب</span>
+  </a>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Handle URL param ?service=X
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const svc = urlParams.get('service');
+      if (svc) {
+        const sel = document.getElementById('pService');
+        if (sel) sel.value = svc;
+      }
+
+      // Handle Portal Form Submit
+      const pForm = document.getElementById('portalConsultationForm');
+      if (pForm) {
+        pForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('pName').value.trim();
+          const phone = document.getElementById('pPhone').value.trim();
+          const email = document.getElementById('pEmail').value.trim();
+          const svcVal = document.getElementById('pService').value;
+          const desc = document.getElementById('pDesc').value.trim();
+          const chk = document.getElementById('pConflictChk').checked;
+          const alertEl = document.getElementById('portalStatusAlert');
+
+          if (!name || !phone || !email || !svcVal || !desc || !chk) {
+            alertEl.className = 'form-status-alert error';
+            alertEl.textContent = 'يرجى إكمال جميع الحقول الإلزامية وتأكيد إقرار فحص تعارض المصالح.';
+            return;
+          }
+
+          const btn = pForm.querySelector('button[type="submit"]');
+          const orig = btn.innerHTML;
+          btn.disabled = true;
+          btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري فحص البيانات وتسجيل الطلب...';
+
+          const refNum = 'NAF-REQ-' + Math.floor(100000 + Math.random() * 900000);
+          const waText = encodeURIComponent(`السلام عليكم، قمت بتقديم طلب استشارة عبر بوابة نافذين برقم قيد: ${refNum} - الاسم: ${name}`);
+
+          setTimeout(() => {
+            btn.disabled = false;
+            btn.innerHTML = orig;
+            pForm.reset();
+            alertEl.className = 'form-status-alert success';
+            alertEl.innerHTML = `<strong>تم تسجيل طلب الاستشارة بنجاح برقم قيد: ${refNum}</strong><br>
+              تم تحويل الملف إلى لجنة فحص تعارض المصالح، وسيتواصل معكم المستشار المكلف خلال ساعات الدوام الرسمي لتأكيد موعد الجلسة الاستشارية.<br>
+              <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+                <a href="https://wa.me/966559787755?text=${waText}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <span>متابعة فورية عبر واتساب <bdi dir="ltr" class="phone-val">(055 978 7755)</bdi></span>
+                </a>
+                <a href="tel:+966559787755" class="btn btn-outline-forest btn-sm">
+                  <i class="fa-solid fa-phone"></i>
+                  <span>اتصال مباشر: <bdi dir="ltr" class="phone-val">055 978 7755</bdi></span>
+                </a>
+              </div>`;
+          }, 800);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

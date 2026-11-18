@@ -1,0 +1,25 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .pat-line { stroke: #C7A44B; stroke-width: 0.75; fill: none; opacity: 0.22; }
+      .pat-dot { fill: #C7A44B; opacity: 0.25; }
+      .pat-accent { stroke: #176D5D; stroke-width: 0.5; fill: none; opacity: 0.15; }
+    </style>
+  </defs>
+  <!-- Symmetrical Najdi Geometric Diamond Grid -->
+  <polygon points="40,4 76,40 40,76 4,40" class="pat-line" />
+  <polygon points="40,16 64,40 40,64 16,40" class="pat-line" />
+  <!-- Central subtle lozenge -->
+  <polygon points="40,28 52,40 40,52 28,40" class="pat-accent" />
+  <!-- Corner chevron / triangle accents (Najdi Shurafat) -->
+  <polygon points="0,0 12,0 0,12" class="pat-line" />
+  <polygon points="80,0 68,0 80,12" class="pat-line" />
+  <polygon points="0,80 12,80 0,68" class="pat-line" />
+  <polygon points="80,80 68,80 80,68" class="pat-line" />
+  <!-- Center dot -->
+  <circle cx="40" cy="40" r="1.5" class="pat-dot" />
+  <circle cx="40" cy="4" r="1" class="pat-dot" />
+  <circle cx="76" cy="40" r="1" class="pat-dot" />
+  <circle cx="40" cy="76" r="1" class="pat-dot" />
+  <circle cx="4" cy="40" r="1" class="pat-dot" />
+</svg>
