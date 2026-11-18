@@ -151,6 +151,37 @@ async function logAudit(action, entityType, entityId, performedBy, details = {},
   }
 }
 
+// Normalize API prefix for Vercel Serverless Function rewrites
+app.use((req, res, next) => {
+  if (!req.url.startsWith('/api') && (
+    req.url.startsWith('/health') ||
+    req.url.startsWith('/settings') ||
+    req.url.startsWith('/services') ||
+    req.url.startsWith('/faq') ||
+    req.url.startsWith('/content') ||
+    req.url.startsWith('/inquiries') ||
+    req.url.startsWith('/consultations') ||
+    req.url.startsWith('/admin/login') ||
+    req.url.startsWith('/admin/logout') ||
+    req.url.startsWith('/admin/me') ||
+    req.url.startsWith('/admin/stats') ||
+    req.url.startsWith('/admin/inquiries') ||
+    req.url.startsWith('/admin/consultations') ||
+    req.url.startsWith('/admin/content') ||
+    req.url.startsWith('/admin/services') ||
+    req.url.startsWith('/admin/faq') ||
+    req.url.startsWith('/admin/articles') ||
+    req.url.startsWith('/admin/media') ||
+    req.url.startsWith('/admin/settings') ||
+    req.url.startsWith('/admin/users') ||
+    req.url.startsWith('/admin/notifications') ||
+    req.url.startsWith('/admin/activity')
+  )) {
+    req.url = '/api' + req.url;
+  }
+  next();
+});
+
 // -------------------------------------------------------------
 // PUBLIC API ENDPOINTS
 // -------------------------------------------------------------
